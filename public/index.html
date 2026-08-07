@@ -160,26 +160,40 @@ const FILES = {
   watchlist: { path: 'data/watchlist.json', el: 'watchlist' },
   waves:     { path: 'data/waves.json',     el: 'waves' },
   timeline:  { path: 'data/timeline.json',  el: 'timeline' },
-  trends:    { path: 'data/auto/github_trends.json', el: 'trends' }
+  trends:    { path: 'data/auto/github_trends.json', el: 'trends' },
+  tools:     { path: 'data/tools.json',     el: 'tools' }
 };
 const LAYER_ZH = { cognition: '认知层', physical: '物理引擎', producer: '生产企业', tool: '执行层' };
 const TYPE_ZH = { new_verified: '新增·已证实', new_pending: '新增·待验证', release: '释放', transfer: '转移' };
 const SCALE_ZH = { individual: '个人/小团队', factory: '单厂/企业内部', scaled: '规模化' };
 const TAG_ZH = { agent_capability: 'agent能力', unit_cost: '单位成本', physical_output: '物理产出' };
-const TOOLS = [
-  { layer: '个人层', name: 'AI + 3D 打印', desc: 'Hi3D：AI 自动化 3D 打印最难步骤；桌面 3D 打印数百美元 vs 工业 CNC 数十万美元', status: 'LIVE' },
-  { layer: '二次开发层', name: '开源机器人二次开发', desc: 'Unitree SDK2（Go2/H1/B2/G1）+ ROS2，个人可改代码；暂无个人可售实物实证', status: 'STALE' },
-  { layer: '大企业层', name: '机器人 / 机床 / 自动化产线', desc: 'WEF 灯塔 224+ 家披露成本↓/产能↑；国家统计局工业机器人产量', status: 'LIVE' }
-];
+const TOOL_TIER_ZH = { personal: '个人层', small_biz: '二次开发层', enterprise: '大企业层' };
+const TOOL_STATUS_ZH = { NEW: '新冒头', LIVE: '在售', STALE: '停更' };
+const CHANNEL_ZH = { procurement: '采购苗头', kickstarter: '众筹', b2b: '工业电商', vendor: '厂商', retail: '零售' };
 
 function el(id) { return document.getElementById(id); }
 
-function renderTools() {
-  el('tools').innerHTML = TOOLS.map(t => `
-    <div class="watch">
-      <span class="status-dot s-${t.status}"></span>
-      <span class="name"><b>${t.layer}</b> · ${t.name}<div class="trends-meta" style="margin:2px 0 0">${t.desc}</div></span>
-    </div>`).join('');
+function renderTools(d) {
+  const list = (d && d.tools) || [];
+  const tiers = ['personal', 'small_biz', 'enterprise'];
+  if (!list.length) { el('tools').innerHTML = '<div class="empty">暂无工具数据</div>'; return; }
+  el('tools').innerHTML = tiers.map(tier => {
+    const items = list.filter(t => t.price_tier === tier);
+    if (!items.length) return '';
+    const head = `<div class="trends-meta" style="margin:4px 0 2px;font-weight:600">${TOOL_TIER_ZH[tier]} · ${tier}</div>`;
+    return head + items.map(t => `
+      <div class="trend">
+        <span class="rname"><b>${t.name}</b>
+          <div class="rdesc">${t.ai_evidence || ''} · 价格分层：${TOOL_TIER_ZH[t.price_tier]}</div>
+          <div class="rdesc">
+            <span class="badge ${t.channel === 'procurement' ? 'b-new_pending' : ''}">${CHANNEL_ZH[t.channel] || t.channel}</span>
+            <span class="badge">${TOOL_STATUS_ZH[t.status] || t.status}</span>
+            人力：${t.metrics.operators_before === null ? '?' : t.metrics.operators_before}→${t.metrics.operators_after === null ? '?' : t.metrics.operators_after}人
+            · 产量：${t.metrics.output_before === null ? '?' : t.metrics.output_before}→${t.metrics.output_after === null ? '?' : t.metrics.output_after}
+          </div></span>
+        ${t.source_url ? `<span class="rage"><a href="${t.source_url}" target="_blank" rel="noopener">来源</a></span>` : ''}
+      </div>`).join('');
+  }).join('');
 }
 
 function signalCard(s) {
@@ -261,15 +275,15 @@ function renderTrends(d) {
 }
 
 function fetchAll() {
-  renderTools();
   Promise.all(Object.values(FILES).map(f =>
     fetch(f.path).then(r => r.ok ? r.json() : null).catch(() => null)
-  )).then(([signals, watchlist, waves, timeline, trends]) => {
+  )).then(([signals, watchlist, waves, timeline, trends, tools]) => {
     if (signals) renderSignals(signals); else el('signals').innerHTML = '<div class="empty">数据加载失败</div>';
     if (watchlist) renderWatchlist(watchlist); else el('watchlist').innerHTML = '<div class="empty">数据加载失败</div>';
     if (waves) renderWaves(waves); else { el('waves-left').innerHTML = '<div class="empty">数据加载失败</div>'; el('waves-right').innerHTML = '<div class="empty">数据加载失败</div>'; }
     if (timeline) renderTimeline(timeline); else el('timeline').innerHTML = '<div class="empty">数据加载失败</div>';
     renderTrends(trends);
+    if (tools) renderTools(tools); else el('tools').innerHTML = '<div class="empty">数据加载失败</div>';
   });
 }
 

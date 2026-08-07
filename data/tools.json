@@ -11,7 +11,7 @@
       "category": "3D打印",
       "price_tier": "personal",
       "metrics": {
-        "operators_before": 2,
+        "operators_before": null,
         "operators_after": 1,
         "output_before": null,
         "output_after": null

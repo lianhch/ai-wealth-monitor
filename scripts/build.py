@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 PUBLIC_DATA = ROOT / "public" / "data"
 
-FILES = ["signals.json", "watchlist.json", "waves.json", "timeline.json"]
+FILES = ["signals.json", "watchlist.json", "waves.json", "timeline.json", "tools.json"]
 AUTO_DIR = DATA_DIR / "auto"
 
 

@@ -2,7 +2,7 @@
   "_meta": {
     "schema_version": "0.1.0",
     "updated": "2026-08-07",
-    "note": "生产工具观测：AI × 具体生产工具。双指标=人力↓/产量↑。price_tier: personal(万内)/small_biz(几十万)/enterprise(百万+)。status: NEW新冒头/LIVE在售/STALE停更。channel: procurement采购苗头/kickstarter众筹/b2b工业电商/vendor厂商/retail零售。procurement=苗头指标，验证后才升级 signals。"
+    "note": "生产工具观测：AI × 具体生产工具。双指标=人力↓/产量↑。price_tier: personal(万内)/small_biz(几十万)/enterprise(百万+)。status: NEW新冒头/LIVE在售/STALE停更。channel: procurement采购苗头/kickstarter众筹/b2b工业电商/vendor厂商/retail零售。procurement=苗头指标，验证后才升级 signals；采购人限生产端企业（国/私/小企），大学/科研采购不入库。"
   },
   "tools": [
     {
@@ -61,18 +61,18 @@
     },
     {
       "id": "TOOL-2026-0004",
-      "name": "AI 驱动的无序分拣机器人（浙江科技大学采购，预算 56 万元）",
-      "category": "机器人",
+      "name": "一体板 AI 视觉检测设备（三棵树涂料产线采购）",
+      "category": "质检",
       "price_tier": "enterprise",
       "metrics": {
-        "operators_before": null,
+        "operators_before": 2,
         "operators_after": null,
         "output_before": null,
         "output_after": null
       },
-      "ai_evidence": "AI 驱动的无序分拣机器人，政府公开招标（采购公告含 AI 驱动、无序分拣需求）",
+      "ai_evidence": "上市公司三棵树（私有企业）产线采购公告：人工分色+人工挑次品（每条线下架岗 2 人白夜班）→ AI+机器视觉一体化检测，自动分色/缺陷识别/自动分级替代人工质检，7×24 生产",
       "channel": "procurement",
-      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202608/t20260801_27054217.htm",
+      "source_url": "https://www.3treesgroup.com/inviteinfo/index/606.html",
       "status": "NEW",
       "discovered_at": "2026-08-07",
       "last_updated": "2026-08-07"

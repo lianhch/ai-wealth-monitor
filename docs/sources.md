@@ -102,6 +102,22 @@
 - Opus 系列 $15/$75 → $5/$25（-67%）；o3 Pro 较 o1 Pro -87%；DeepSeek 已到 $0.14/$1M。
 - **用法**：自动抓 tokenprice.fyi / LLMRates / RoninForge 的 JSON → "单位推理成本"序列，直接对应"执行层单位任务成本↓"。
 
+### 生产工具观测渠道（AI × 具体生产工具，data/tools.json 驱动）
+
+> 双指标 = 人力↓ / 产量↑。工具先在商品页/采购清单冒头，再流转到市场。详见 `docs/superpowers/specs/2026-08-07-生产工具观测-design.md`。
+
+| 渠道 | 作用 | 状态 |
+|---|---|---|
+| 中国政府采购网 + 央企采购平台 | 苗头指标（最早）：采购公告出现 AI 化生产装备 = 官方确认 | MANUAL |
+| 美国联邦采购 GSA Advantage / FedMall | 苗头指标：联邦采购目录 | MANUAL |
+| 上市公司/中标公告（巨潮） | 苗头指标：AI 生产装备采购金额与供应商 | MANUAL |
+| Kickstarter / Indiegogo | 新工具冒头（pre-market） | MANUAL |
+| 垂直厂商直销（Bambu Lab / Unitree 等） | 新一代 AI 生产工具功能参数 | MANUAL |
+| 1688 / 阿里国际站 / Made-in-China | B2B 商品页（存量工具） | MANUAL |
+| Amazon / 京东工业品 | 零售普及 + 真实评价验证 | MANUAL |
+
+**采购清单 = 苗头指标**：好东西先流向政府和富人阶层，采购清单比普通商品页早一个周期。procurement 渠道工具验证后才升级 signals。
+
 ## 四、观测链与源对应总表
 
 | 观测链层 | 观测内容 | 自动源 | 人工源 |

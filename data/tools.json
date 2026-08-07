@@ -1,0 +1,81 @@
+{
+  "_meta": {
+    "schema_version": "0.1.0",
+    "updated": "2026-08-07",
+    "note": "生产工具观测：AI × 具体生产工具。双指标=人力↓/产量↑。price_tier: personal(万内)/small_biz(几十万)/enterprise(百万+)。status: NEW新冒头/LIVE在售/STALE停更。channel: procurement采购苗头/kickstarter众筹/b2b工业电商/vendor厂商/retail零售。procurement=苗头指标，验证后才升级 signals。"
+  },
+  "tools": [
+    {
+      "id": "TOOL-2026-0001",
+      "name": "Bambu Lab A1 Combo（3D 打印机，AI 首层检测/主动调平）",
+      "category": "3D打印",
+      "price_tier": "personal",
+      "metrics": {
+        "operators_before": 2,
+        "operators_after": 1,
+        "output_before": null,
+        "output_after": null
+      },
+      "ai_evidence": "AI 首层检测、主动调平、无人值守打印",
+      "channel": "vendor",
+      "source_url": "https://bambulab.com/en/a1",
+      "status": "LIVE",
+      "discovered_at": "2026-08-07",
+      "last_updated": "2026-08-07"
+    },
+    {
+      "id": "TOOL-2026-0002",
+      "name": "Unitree Go2（四足机器人，ROS2/SDK 二次开发）",
+      "category": "机器人",
+      "price_tier": "small_biz",
+      "metrics": {
+        "operators_before": null,
+        "operators_after": null,
+        "output_before": null,
+        "output_after": null
+      },
+      "ai_evidence": "ROS2/SDK 二次开发、自主导航、巡检能力",
+      "channel": "vendor",
+      "source_url": "https://www.unitree.com/go2",
+      "status": "LIVE",
+      "discovered_at": "2026-08-07",
+      "last_updated": "2026-08-07"
+    },
+    {
+      "id": "TOOL-2026-0003",
+      "name": "xTool P2（桌面激光切割机，AI 对焦/自动切割参数）",
+      "category": "激光",
+      "price_tier": "personal",
+      "metrics": {
+        "operators_before": null,
+        "operators_after": null,
+        "output_before": null,
+        "output_after": null
+      },
+      "ai_evidence": "AI 自动对焦、自动切割参数推荐",
+      "channel": "kickstarter",
+      "source_url": "https://www.kickstarter.com/projects/xtool/xtool-p2-55w-diode-laser-cutter-and-engraver",
+      "status": "NEW",
+      "discovered_at": "2026-08-07",
+      "last_updated": "2026-08-07"
+    },
+    {
+      "id": "TOOL-2026-0004",
+      "name": "（示例·苗头）AI 视觉分拣机器人采购公告",
+      "category": "机器人",
+      "price_tier": "enterprise",
+      "metrics": {
+        "operators_before": null,
+        "operators_after": null,
+        "output_before": null,
+        "output_after": null
+      },
+      "ai_evidence": "采购公告中出现 AI 视觉分拣、无人值守产线参数",
+      "channel": "procurement",
+      "source_url": "https://www.ccgp.gov.cn",
+      "status": "NEW",
+      "discovered_at": "2026-08-07",
+      "last_updated": "2026-08-07"
+    }
+  ]
+}

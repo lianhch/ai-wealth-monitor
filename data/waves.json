@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "schema_version": "0.1.0",
+    "updated": "2026-08-07",
+    "note": "左右列重塑信号：left=旧摩擦需求在消失(被重塑的生产痛点)，right=新生产方式操作位在冒头(持久价值)。data 基础见 docs/生产方式重塑信号清单.md"
+  },
+  "waves": {
+    "left": [
+      {
+        "id": "WAVE-L01",
+        "title": "代装/代部署/基础配置服务",
+        "trend": "down",
+        "confidence": "high",
+        "note": "agent 原生解决配置，人工代办需求消失",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L02",
+        "title": "低端外包/转包人工差价",
+        "trend": "down",
+        "confidence": "high",
+        "note": "AI 直接产出，中间环节被压缩",
+        "last_seen": "2026-08-07"
+      }
+    ],
+    "right": [
+      {
+        "id": "WAVE-R01",
+        "title": "vibe coding 产能（个人产出放大）",
+        "trend": "up",
+        "confidence": "high",
+        "note": "从写代码到调 agent，个人产能跨越式提升",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R02",
+        "title": "垂直行业 AI 原生交付",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "把行业知识 + agent 能力封装成可交付产物",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R03",
+        "title": "人机协作把关（验证/安全/合规）",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "AI 产出越多，把关岗位价值越大",
+        "last_seen": "2026-08-07"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "_meta": {
+    "schema_version": "0.1.0",
+    "updated": "2026-08-07",
+    "note": "事件时间线：重大能力跃迁/物理产出/企业披露。tag 对应观测指标。"
+  },
+  "events": [
+    {
+      "id": "EVT-2026-0001",
+      "date": "2026-08-07",
+      "category": "milestone",
+      "tag": ["agent_capability"],
+      "title": "示例：某 agent 在基准任务上自主完成率突破阈值",
+      "detail": "关联的说明",
+      "source_url": "https://example.com"
+    }
+  ]
+}

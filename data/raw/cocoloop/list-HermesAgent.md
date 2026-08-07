@@ -1,0 +1,26 @@
+﻿# cocoloop.cn - HermesAgent
+
+total: 22
+
+- [完全没热度啊，hermesv0.18版本都出来了，功能挺先进啊。](https://www.cocoloop.cn/t/topic/10621)
+- [Hermes 黑客松出了 187 个项目，这几个值得关注](https://www.cocoloop.cn/t/topic/2710)
+- [把 Hermes 接入团队 Slack，说说实际落地效果](https://www.cocoloop.cn/t/topic/2708)
+- [零基础怎么上手Hermes Agent？Hermes Agent上手教程分享](https://www.cocoloop.cn/t/topic/2702)
+- [Hermes 的跨会话持久记忆和 OpenClaw 的记忆系统，本质区别在这里](https://www.cocoloop.cn/t/topic/2704)
+- [Hermes配置Kimi居然有坑！Hermes配置Kimi方法分享](https://www.cocoloop.cn/t/topic/2862)
+- [Hermes Agent在Windows上安装有什么问题？Hermes Agent在Windows上安装问题盘点](https://www.cocoloop.cn/t/topic/2855)
+- [5 美元 VPS 跑 Hermes Agent，实际体验和成本拆解](https://www.cocoloop.cn/t/topic/2703)
+- [OpenClaw要成为历史了！Hermes Agent正在袭来](https://www.cocoloop.cn/t/topic/2700)
+- [后台任务完成自动通知，这是 Hermes 比 OpenClaw 强的地方](https://www.cocoloop.cn/t/topic/2707)
+- [Hermes怎么搭建全自动问候团队？5分钟跑通Hermes多Agent协作](https://www.cocoloop.cn/t/topic/5926)
+- [Hermes 自动生成 Skill，OpenClaw 手动写 Skill，两种思路哪个更好](https://www.cocoloop.cn/t/topic/2701)
+- [泡沫破裂？OpenClaw被抛弃，下一个是Hermes Agent？](https://www.cocoloop.cn/t/topic/2712)
+- [Hermes Agent怎么安装？Hermes Agent安装问题及解决方法](https://www.cocoloop.cn/t/topic/2705)
+- [手把手带你安装hermes agent！hermes agent安装方法分享](https://www.cocoloop.cn/t/topic/2854)
+- [Hermes Agent是什么？Hermes Agent全方位深度拆解分析](https://www.cocoloop.cn/t/topic/2714)
+- [Hermes Agent新手入门指南，新手怎么快速入门Hermes Agent](https://www.cocoloop.cn/t/topic/2873)
+- [从 OpenClaw 迁移到 Hermes，一键迁移真的无缝吗？](https://www.cocoloop.cn/t/topic/2699)
+- [用 Hermes 跑了一个月，说说它越用越聪明是不是真的](https://www.cocoloop.cn/t/topic/2713)
+- [Hermes 和 OpenClaw 并存还是二选一，我的选择和理由](https://www.cocoloop.cn/t/topic/2715)
+- [Hermes Agent 今天发了 v2026.4.8，说说这次更新的重点](https://www.cocoloop.cn/t/topic/2698)
+- [Hermes怎么配置飞书？Hermes配置飞书教程分享](https://www.cocoloop.cn/t/topic/2870)

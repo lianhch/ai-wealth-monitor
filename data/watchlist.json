@@ -1,0 +1,53 @@
+{
+  "_meta": {
+    "schema_version": "0.1.0",
+    "updated": "2026-08-07",
+    "note": "盯人名单：认知层(模型/agent) / 物理引擎(机器人) / 生产企业闭环。status: LIVE/STALE/MANUAL。last_signal 为该对象最近一条关键动态。"
+  },
+  "watchlist": [
+    {
+      "id": "WATCH-0001",
+      "name": "Anthropic",
+      "layer": "cognition",
+      "type": "model_vendor",
+      "status": "LIVE",
+      "signal_channel": ["anthropic_blog", "rss"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "认知层前瞻信号，不算新增财富，仅标记能力跃迁"
+    },
+    {
+      "id": "WATCH-0002",
+      "name": "OpenAI",
+      "layer": "cognition",
+      "type": "model_vendor",
+      "status": "LIVE",
+      "signal_channel": ["openai_blog", "rss"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": ""
+    },
+    {
+      "id": "WATCH-0003",
+      "name": "智元 AgiBot",
+      "layer": "physical",
+      "type": "robot_vendor",
+      "status": "LIVE",
+      "signal_channel": ["zhiyuan_website", "wechat"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "中文机器人厂商，关注出货与产线部署"
+    },
+    {
+      "id": "WATCH-0004",
+      "name": "宁德时代",
+      "layer": "producer",
+      "type": "manufacturer",
+      "status": "LIVE",
+      "signal_channel": ["earnings", "ir"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "生产企业闭环：关注 AI 产线改造的成本/产能披露"
+    }
+  ]
+}

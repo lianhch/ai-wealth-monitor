@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI 财富创造观察站</title>
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --border: #30363d;
+    --text: #e6edf3;
+    --muted: #8b949e;
+    --green: #3fb950;
+    --amber: #d29922;
+    --red: #f85149;
+    --blue: #58a6ff;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Segoe UI", "Microsoft YaHei", system-ui, sans-serif;
+    line-height: 1.6;
+  }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 24px 16px 64px; }
+  header { border-bottom: 1px solid var(--border); padding: 16px 0 20px; margin-bottom: 20px; }
+  header h1 { font-size: 24px; }
+  header p { color: var(--muted); font-size: 14px; margin-top: 4px; }
+  .banner {
+    background: linear-gradient(135deg, rgba(63,185,80,.12), rgba(88,166,255,.08));
+    border: 1px solid var(--border); border-radius: 10px;
+    padding: 16px 20px; margin-bottom: 20px;
+  }
+  .banner .std { font-size: 15px; font-weight: 600; color: var(--green); margin-bottom: 6px; }
+  .filters { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 12px; }
+  .filter { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; }
+  .filter .tag { font-weight: 600; font-size: 13px; }
+  .filter .desc { color: var(--muted); font-size: 12px; margin-top: 2px; }
+  .t-transfer .tag { color: var(--red); }
+  .t-release .tag { color: var(--amber); }
+  .t-new .tag { color: var(--green); }
+  .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
+  .panel {
+    background: var(--panel); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px; margin-bottom: 16px;
+  }
+  .panel h2 { font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .panel h2 .n { color: var(--muted); font-size: 12px; font-weight: 400; }
+  .status-dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+  .s-LIVE { background: var(--green); } .s-STALE { background: var(--amber); } .s-MANUAL { background: var(--blue); }
+  .empty { color: var(--muted); font-size: 13px; padding: 8px 0; }
+  .signal { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
+  .signal .top { display: flex; align-items: center; gap: 8px; font-size: 13px; flex-wrap: wrap; }
+  .badge { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); }
+  .b-new { color: var(--green); border-color: var(--green); }
+  .b-release { color: var(--amber); border-color: var(--amber); }
+  .b-transfer { color: var(--red); border-color: var(--red); }
+  .signal .t { font-size: 14px; margin: 6px 0 2px; }
+  .signal .src { color: var(--muted); font-size: 11px; }
+  .watch { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
+  .watch:last-child { border-bottom: none; }
+  .watch .name { flex: 1; }
+  .watch .layer { font-size: 11px; color: var(--muted); }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
+  .col { border: 1px solid var(--border); border-radius: 8px; padding: 12px; }
+  .col h3 { font-size: 13px; margin-bottom: 10px; }
+  .col.left h3 { color: var(--red); } .col.right h3 { color: var(--green); }
+  .wave { font-size: 13px; padding: 6px 0; border-bottom: 1px dashed var(--border); }
+  .wave:last-child { border-bottom: none; }
+  .wave .w { color: var(--muted); font-size: 11px; }
+  .timeline-item { font-size: 13px; padding: 8px 0; border-bottom: 1px dashed var(--border); }
+  .timeline-item:last-child { border-bottom: none; }
+  .timeline-item .d { color: var(--muted); font-size: 11px; }
+  footer { margin-top: 32px; color: var(--muted); font-size: 12px; border-top: 1px solid var(--border); padding-top: 12px; }
+  footer a { color: var(--blue); text-decoration: none; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>AI 财富创造观察站</h1>
+    <p>唯一标准：AI 是否创造了更多新增（物理）财富？ · 数据源状态见各板块</p>
+  </header>
+
+  <div class="banner">
+    <div class="std">唯一标准 · 三问筛选器</div>
+    <div>每条信号先过三问：这是 <b style="color:var(--red)">转移</b>（零和，不进主榜）？<b style="color:var(--amber)">释放</b>（提效，标注前提）？还是 <b style="color:var(--green)">新增</b>（做出原本做不出的东西，进主榜）？</div>
+    <div class="filters">
+      <div class="filter t-transfer"><div class="tag">转移 transfer</div><div class="desc">零和：卖课/信息差/转手差价。不进主榜。</div></div>
+      <div class="filter t-release"><div class="tag">释放 release</div><div class="desc">提效：同样投入更多产出。前提：资源流向新产出。</div></div>
+      <div class="filter t-new"><div class="tag">新增 new · 进主榜</div><div class="desc">终局：原本做不出的东西。最终验证 = 物理产出增量。</div></div>
+    </div>
+  </div>
+
+  <div class="grid">
+    <div>
+      <div class="panel" id="signals-panel">
+        <h2>财富信号榜 <span class="n">新增物理财富实证</span></h2>
+        <div id="signals"></div>
+      </div>
+      <div class="panel" id="waves-panel">
+        <h2>左右列重塑信号 <span class="n">左列消失 / 右列冒头</span></h2>
+        <div class="columns">
+          <div class="col left"><h3>左 · 旧摩擦需求在消失</h3><div id="waves-left"></div></div>
+          <div class="col right"><h3>右 · 新生产方式操作位在冒头</h3><div id="waves-right"></div></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="panel" id="watchlist-panel">
+        <h2>盯人名单</h2>
+        <div id="watchlist"></div>
+      </div>
+      <div class="panel" id="timeline-panel">
+        <h2>事件时间线</h2>
+        <div id="timeline"></div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    数据来源见 <a href="https://github.com" target="_blank">docs/sources.md</a>（渠道清单） · 设计见 PLAN.md ·
+    本项目开源，差异化点：唯一标准筛选 + 物理闭环盯人
+  </footer>
+</div>
+
+<script>
+const FILES = {
+  signals:   { path: 'data/signals.json',   el: 'signals' },
+  watchlist: { path: 'data/watchlist.json', el: 'watchlist' },
+  waves:     { path: 'data/waves.json',     el: 'waves' },
+  timeline:  { path: 'data/timeline.json',  el: 'timeline' }
+};
+const LAYER_ZH = { cognition: '认知层', physical: '物理引擎', producer: '生产企业', tool: '执行层' };
+const TYPE_ZH = { new: '新增', release: '释放', transfer: '转移' };
+const TAG_ZH = { agent_capability: 'agent能力', unit_cost: '单位成本', physical_output: '物理产出' };
+
+function el(id) { return document.getElementById(id); }
+
+function renderSignals(d) {
+  const list = (d.signals || []).filter(s => s.type !== 'transfer');
+  if (!list.length) { el('signals').innerHTML = '<div class="empty">暂无已发布信号（阶段 3 录入首批数据）</div>'; return; }
+  el('signals').innerHTML = list.map(s => `
+    <div class="signal">
+      <div class="top">
+        <span class="badge b-${s.type}">${TYPE_ZH[s.type]}</span>
+        <span>${LAYER_ZH[s.chain_layer] || s.chain_layer}</span>
+        <span>${s.date}</span>
+        <span class="status-dot s-${(s.evidence && s.evidence.verified_by === 'human') ? 'LIVE' : 'MANUAL'}"></span>
+      </div>
+      <div class="t">${s.title}</div>
+      <div class="src">来源：${s.evidence ? s.evidence.source_name : '未知'}${s.evidence && s.evidence.source_url ? ' · ' + s.evidence.source_url : ''}</div>
+    </div>`).join('');
+}
+
+function renderWatchlist(d) {
+  const list = d.watchlist || [];
+  if (!list.length) { el('watchlist').innerHTML = '<div class="empty">暂无盯人对象</div>'; return; }
+  el('watchlist').innerHTML = list.map(w => `
+    <div class="watch">
+      <span class="status-dot s-${w.status}"></span>
+      <span class="name">${w.name}</span>
+      <span class="layer">${LAYER_ZH[w.layer] || w.layer}</span>
+    </div>`).join('');
+}
+
+function renderWaves(d) {
+  const left = (d.waves && d.waves.left) || [];
+  const right = (d.waves && d.waves.right) || [];
+  el('waves-left').innerHTML = left.length
+    ? left.map(w => `<div class="wave">${w.title} <span class="w">(${w.trend === 'down' ? '↓ 减弱' : '↔'} · 置信 ${w.confidence})</span></div>`).join('')
+    : '<div class="empty">暂无</div>';
+  el('waves-right').innerHTML = right.length
+    ? right.map(w => `<div class="wave">${w.title} <span class="w">(${w.trend === 'up' ? '↑ 增强' : '↔'} · 置信 ${w.confidence})</span></div>`).join('')
+    : '<div class="empty">暂无</div>';
+}
+
+function renderTimeline(d) {
+  const list = d.events || [];
+  if (!list.length) { el('timeline').innerHTML = '<div class="empty">暂无事件</div>'; return; }
+  el('timeline').innerHTML = list.slice().sort((a, b) => b.date.localeCompare(a.date)).map(e => `
+    <div class="timeline-item">
+      <span class="d">${e.date}</span> · ${e.title}
+      ${e.tag ? ' <span class="w">' + e.tag.map(t => '#' + (TAG_ZH[t] || t)).join(' ') + '</span>' : ''}
+    </div>`).join('');
+}
+
+function fetchAll() {
+  Promise.all(Object.values(FILES).map(f =>
+    fetch(f.path).then(r => r.ok ? r.json() : null).catch(() => null)
+  )).then(([signals, watchlist, waves, timeline]) => {
+    if (signals) renderSignals(signals); else el('signals').innerHTML = '<div class="empty">数据加载失败</div>';
+    if (watchlist) renderWatchlist(watchlist); else el('watchlist').innerHTML = '<div class="empty">数据加载失败</div>';
+    if (waves) renderWaves(waves); else { el('waves-left').innerHTML = '<div class="empty">数据加载失败</div>'; el('waves-right').innerHTML = '<div class="empty">数据加载失败</div>'; }
+    if (timeline) renderTimeline(timeline); else el('timeline').innerHTML = '<div class="empty">数据加载失败</div>';
+  });
+}
+
+fetchAll();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "_meta": {
+    "schema_version": "0.1.0",
+    "updated": "2026-08-07",
+    "note": "财富信号：新增物理财富实证。type 三分类：transfer(转移)/release(释放)/new(新增)。只有 new 进主榜。"
+  },
+  "signals": [
+    {
+      "id": "SIG-2026-0001",
+      "date": "2026-08-07",
+      "type": "new",
+      "chain_layer": "producer",
+      "title": "示例：某制造企业披露产线 AI 改造后单位成本下降 X%、产能提升 Y%",
+      "evidence": {
+        "source_name": "企业财报/IR",
+        "source_url": "https://example.com",
+        "quote": "原始披露语句或关键数字",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": ["WATCH-0001"]
+    }
+  ]
+}

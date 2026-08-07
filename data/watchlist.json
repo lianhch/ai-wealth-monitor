@@ -1,8 +1,8 @@
 {
   "_meta": {
-    "schema_version": "0.1.0",
+    "schema_version": "0.2.0",
     "updated": "2026-08-07",
-    "note": "盯人名单：认知层(模型/agent) / 物理引擎(机器人) / 生产企业闭环。status: LIVE/STALE/MANUAL。last_signal 为该对象最近一条关键动态。"
+    "note": "盯人名单：认知层(模型/agent) / 物理引擎(机器人) / 生产企业闭环。status: LIVE/STALE/MANUAL。核心判断：模型厂商只作前瞻信号，生产企业披露的成本↓/产能↑才算新增财富实证。"
   },
   "watchlist": [
     {
@@ -12,7 +12,7 @@
       "type": "model_vendor",
       "status": "LIVE",
       "signal_channel": ["anthropic_blog", "rss"],
-      "last_signal": null,
+      "last_signal": "揭露 Claude 全线产品智能体安全隔离方案（cocoloop 6467）",
       "last_updated": "2026-08-07",
       "notes": "认知层前瞻信号，不算新增财富，仅标记能力跃迁"
     },
@@ -29,6 +29,39 @@
     },
     {
       "id": "WATCH-0003",
+      "name": "DeepSeek",
+      "layer": "cognition",
+      "type": "model_vendor",
+      "status": "LIVE",
+      "signal_channel": ["deepseek_website", "wechat"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "中文模型，554 实测 DeepSeek API 月成本 100-300 元、投入产出比 175:1"
+    },
+    {
+      "id": "WATCH-0004",
+      "name": "Cursor",
+      "layer": "cognition",
+      "type": "coding_tool",
+      "status": "LIVE",
+      "signal_channel": ["changelog"],
+      "last_signal": "6714 实测 vibe coding 2 天顶 15-30 人天产能（用 Cursor + Codex）",
+      "last_updated": "2026-08-07",
+      "notes": "执行层效率放大器，观察采用曲线"
+    },
+    {
+      "id": "WATCH-0005",
+      "name": "OpenClaw",
+      "layer": "cognition",
+      "type": "agent_framework",
+      "status": "LIVE",
+      "signal_channel": ["github_releases", "cocoloop"],
+      "last_signal": "cocoloop 社区大量实操：自动运营公众号/小红书、跨电商、客服系统（107/1275/2172 等）",
+      "last_updated": "2026-08-07",
+      "notes": "中文社区最活跃的开源 agent，观测真实落地密度"
+    },
+    {
+      "id": "WATCH-0006",
       "name": "智元 AgiBot",
       "layer": "physical",
       "type": "robot_vendor",
@@ -39,7 +72,29 @@
       "notes": "中文机器人厂商，关注出货与产线部署"
     },
     {
-      "id": "WATCH-0004",
+      "id": "WATCH-0007",
+      "name": "宇树 Unitree",
+      "layer": "physical",
+      "type": "robot_vendor",
+      "status": "LIVE",
+      "signal_channel": ["unitree_website", "wechat"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "中文机器人厂商，出货量为观察重点"
+    },
+    {
+      "id": "WATCH-0008",
+      "name": "Tesla Optimus",
+      "layer": "physical",
+      "type": "robot_vendor",
+      "status": "LIVE",
+      "signal_channel": ["earnings", "ir"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "季报披露机器人和能源业务为物理层信号"
+    },
+    {
+      "id": "WATCH-0009",
       "name": "宁德时代",
       "layer": "producer",
       "type": "manufacturer",
@@ -48,6 +103,50 @@
       "last_signal": null,
       "last_updated": "2026-08-07",
       "notes": "生产企业闭环：关注 AI 产线改造的成本/产能披露"
+    },
+    {
+      "id": "WATCH-0010",
+      "name": "比亚迪",
+      "layer": "producer",
+      "type": "manufacturer",
+      "status": "LIVE",
+      "signal_channel": ["earnings", "ir"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "生产企业闭环：全球最大新能源汽车制造商，AI 造车/工厂自动化"
+    },
+    {
+      "id": "WATCH-0011",
+      "name": "富士康",
+      "layer": "producer",
+      "type": "manufacturer",
+      "status": "LIVE",
+      "signal_channel": ["earnings", "ir"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "电子制造代工，机器人部署规模全球最大"
+    },
+    {
+      "id": "WATCH-0012",
+      "name": "海尔",
+      "layer": "producer",
+      "type": "manufacturer",
+      "status": "LIVE",
+      "signal_channel": ["earnings", "ir"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "WEF 灯塔工厂名单中的常客，观察 AI 落地制造"
+    },
+    {
+      "id": "WATCH-0013",
+      "name": "WEF 灯塔工厂名单",
+      "layer": "producer",
+      "type": "official_registry",
+      "status": "STALE",
+      "signal_channel": ["wef_report", "web"],
+      "last_signal": null,
+      "last_updated": "2026-08-07",
+      "notes": "世界经济论坛认证：用第四次工业革命技术实现显著效益的工厂，AI 落地物理生产的官方脉络，年更"
     }
   ]
 }

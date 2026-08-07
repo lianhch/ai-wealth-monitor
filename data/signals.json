@@ -1,20 +1,20 @@
 {
   "_meta": {
-    "schema_version": "0.1.0",
+    "schema_version": "0.2.0",
     "updated": "2026-08-07",
-    "note": "财富信号：新增物理财富实证。type 三分类：transfer(转移)/release(释放)/new(新增)。只有 new 进主榜。"
+    "note": "财富信号：首批数据来自 cocoloop 100 篇帖子（2026-08 抓取）。type 三分类：transfer(转移)/release(释放)/new(新增)。只有 new 进主榜，transfer 进噪音样本反衬。"
   },
   "signals": [
     {
       "id": "SIG-2026-0001",
       "date": "2026-08-07",
       "type": "new",
-      "chain_layer": "producer",
-      "title": "示例：某制造企业披露产线 AI 改造后单位成本下降 X%、产能提升 Y%",
+      "chain_layer": "tool",
+      "title": "零基础 12 天做出 AI 日记产品：487 注册 / 31 付费 / 6.4% 转化，首月净利 ¥1520（AI 写 80% 代码）",
       "evidence": {
-        "source_name": "企业财报/IR",
-        "source_url": "https://example.com",
-        "quote": "原始披露语句或关键数字",
+        "source_name": "cocoloop 帖子 1744（makerhu，实操者自报账本）",
+        "source_url": "https://www.cocoloop.cn/t/topic/1744",
+        "quote": "注册用户 487；付费用户 31；转化率 6.4%；收入 ¥1,860；API 成本 ¥340；服务器成本 ¥0（Vercel 免费层）；净利润 ¥1,520",
         "verified_by": "human"
       },
       "metrics": {
@@ -22,7 +22,121 @@
         "capacity_increase_pct": null,
         "capex_usd_m": null
       },
-      "related_watch": ["WATCH-0001"]
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0002",
+      "date": "2026-08-07",
+      "type": "new",
+      "chain_layer": "producer",
+      "title": "AI 客服系统落地：8 人客服团队降为 3 人，月成本 ¥8万→¥3.2万，AI 自动答复率 68%",
+      "evidence": {
+        "source_name": "cocoloop 帖子 1755（chenhaoran_ops，企业实操）",
+        "source_url": "https://www.cocoloop.cn/t/topic/1755",
+        "quote": "AI 自动答复 0%→68%；人工工单 350→112/天；客服团队 8→3 人；月度成本 ~¥8万→~¥3.2万；客户满意度 4.1→4.3/5",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": 60,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0003",
+      "date": "2026-08-07",
+      "type": "new",
+      "chain_layer": "producer",
+      "title": "垂直行业 AI 原生交付：屋顶报价系统拿下 $50,000 合同 + $500/月维护订阅",
+      "evidence": {
+        "source_name": "cocoloop 帖子 2350（xiaobaiAI，实操者自报）",
+        "source_url": "https://www.cocoloop.cn/t/topic/2350",
+        "quote": "案例1：屋顶报价 + AI = 成交 $50,000，每月 $500 维护费；案例2：竞品分析 + AI = 每项目 $200-500；案例3：法律咨询 + AI = 每季 $1000+ 私有咨询",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0004",
+      "date": "2026-08-07",
+      "type": "release",
+      "chain_layer": "tool",
+      "title": "Vibe coding 流水线：2 天顶 15-30 人天产能（plan→coding→review 流程）",
+      "evidence": {
+        "source_name": "cocoloop 帖子 6714（strmz，实操者自报）",
+        "source_url": "https://www.cocoloop.cn/t/topic/6714",
+        "quote": "一种大概 2 天：第一天规划连夜写代码，第二天 review，能达到的效率不亚于之前 15-30 人天项目",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0005",
+      "date": "2026-08-07",
+      "type": "release",
+      "chain_layer": "tool",
+      "title": "AI 辅助接单开发：3 个月实测月入 1.2-1.8 万，开发效率 3-5 倍",
+      "evidence": {
+        "source_name": "cocoloop 帖子 1737（pivot_king，实操者自报）",
+        "source_url": "https://www.cocoloop.cn/t/topic/1737",
+        "quote": "平均月入 1.2W-1.8W；每周投入 15-20 小时；用 AI 之后开发效率是以前 3-5 倍",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0006",
+      "date": "2026-08-07",
+      "type": "release",
+      "chain_layer": "tool",
+      "title": "AI 代运营公众号/小红书：接 8 个号月入 3.5 万（前提：内容能力 + 获客）",
+      "evidence": {
+        "source_name": "cocoloop 帖子 554（实操者自报）",
+        "source_url": "https://www.cocoloop.cn/t/topic/554",
+        "quote": "接 8 个号月 3.5 万；单个号 3000-5000/月",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
+    },
+    {
+      "id": "SIG-2026-0007",
+      "date": "2026-08-07",
+      "type": "transfer",
+      "chain_layer": "tool",
+      "title": "噪音样本：AI 工具代装代卸月入 3000-5000 —— 窗口期生意，一键部署普及后消失",
+      "evidence": {
+        "source_name": "cocoloop 帖子 449/989/1012（实操者自报）",
+        "source_url": "https://www.cocoloop.cn/t/topic/449",
+        "quote": "基础装 99-299/单；企业定制 999+；月 3000-5000。989 自评：UX 做不好中间商就永远有饭吃——UX 做好了就没饭吃",
+        "verified_by": "human"
+      },
+      "metrics": {
+        "cost_reduction_pct": null,
+        "capacity_increase_pct": null,
+        "capex_usd_m": null
+      },
+      "related_watch": []
     }
   ]
 }

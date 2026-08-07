@@ -1,51 +1,139 @@
 {
   "_meta": {
-    "schema_version": "0.1.0",
+    "schema_version": "0.2.0",
     "updated": "2026-08-07",
-    "note": "左右列重塑信号：left=旧摩擦需求在消失(被重塑的生产痛点)，right=新生产方式操作位在冒头(持久价值)。data 基础见 docs/生产方式重塑信号清单.md"
+    "note": "左右列重塑信号：left=旧摩擦需求在消失(被重塑的生产痛点)，right=新生产方式操作位在冒头(持久价值)。首批数据来自 cocoloop 100 篇帖子，见 docs/生产方式重塑信号清单.md"
   },
   "waves": {
     "left": [
       {
         "id": "WAVE-L01",
-        "title": "代装/代部署/基础配置服务",
+        "title": "AI 工具代装/代卸/配置/运维",
         "trend": "down",
         "confidence": "high",
-        "note": "agent 原生解决配置，人工代办需求消失",
+        "note": "一键部署 + 云端化 + UX 改善后需求归零。989 自评：UX 做不好中间商才有饭吃",
         "last_seen": "2026-08-07"
       },
       {
         "id": "WAVE-L02",
-        "title": "低端外包/转包人工差价",
+        "title": "教人用 AI / 帮人接微信机器人",
         "trend": "down",
         "confidence": "high",
-        "note": "AI 直接产出，中间环节被压缩",
+        "note": "AI 原生一代不需要被教，工具自带教程，平台自己做集成",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L03",
+        "title": "AI 内容代运营/代排版",
+        "trend": "down",
+        "confidence": "medium",
+        "note": "平台编辑器内嵌原生 AI 创作，服务商被替换",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L04",
+        "title": "办公自动化外包（Excel 清洗/周报/PPT）",
+        "trend": "down",
+        "confidence": "medium",
+        "note": "Office/WPS 原生 AI + agent 内嵌，用户自己做",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L05",
+        "title": "信息调研/竞品分析外包",
+        "trend": "down",
+        "confidence": "medium",
+        "note": "agent 直接能查能写，不再需要人肉中转",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L06",
+        "title": "AI 绘图低价接单（封面/商品图）",
+        "trend": "down",
+        "confidence": "high",
+        "note": "已卷到 30/张，机械裁切类需求被 AI 原生工具内嵌",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L07",
+        "title": "普通网站/小程序外包",
+        "trend": "down",
+        "confidence": "high",
+        "note": "vibe coding 让客户自己造，低端外包萎缩",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L08",
+        "title": "养号/矩阵吃广告费",
+        "trend": "down",
+        "confidence": "high",
+        "note": "平台算法收紧 + 原生多开工具",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-L09",
+        "title": "恐慌型周边（安全审计、上门回收）",
+        "trend": "down",
+        "confidence": "medium",
+        "note": "一次性事件，随认知普及消失",
         "last_seen": "2026-08-07"
       }
     ],
     "right": [
       {
         "id": "WAVE-R01",
-        "title": "vibe coding 产能（个人产出放大）",
+        "title": "个人产能放大（vibe coding / agent 编排流程）",
         "trend": "up",
         "confidence": "high",
-        "note": "从写代码到调 agent，个人产能跨越式提升",
+        "note": "6714 实测 2 天顶 15-30 人天产能；流程+判断力是可复用资产",
         "last_seen": "2026-08-07"
       },
       {
         "id": "WAVE-R02",
         "title": "垂直行业 AI 原生交付",
         "trend": "up",
-        "confidence": "medium",
-        "note": "把行业知识 + agent 能力封装成可交付产物",
+        "confidence": "high",
+        "note": "卖结果而非省时；2350 屋顶报价 $500/月、法律问答 $1000+/月",
         "last_seen": "2026-08-07"
       },
       {
         "id": "WAVE-R03",
-        "title": "人机协作把关（验证/安全/合规）",
+        "title": "AI 原生产品 + 真实客户",
         "trend": "up",
         "confidence": "medium",
-        "note": "AI 产出越多，把关岗位价值越大",
+        "note": "1744 零基础 12 天出产品，首月净利 1520",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R04",
+        "title": "AI agent 部署/体系化运维（订阅制）",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "从一次性代装升级为月度维护订阅，989 里 500/月 比 200/台 更接近操作位",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R05",
+        "title": "人机协作交付（AI 生产 + 人工把关）",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "15% 需要人工微调（773）；确认键提升信任（2350）",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R06",
+        "title": "AI 安全/合规/评估",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "生产方式规模越大安全合规越刚性（6467）",
+        "last_seen": "2026-08-07"
+      },
+      {
+        "id": "WAVE-R07",
+        "title": "数据与知识资产 AI 化",
+        "trend": "up",
+        "confidence": "medium",
+        "note": "生产方式重塑的燃料是数据，谁有垂直数据谁有定价权",
         "last_seen": "2026-08-07"
       }
     ]

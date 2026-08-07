@@ -1,18 +1,54 @@
 {
   "_meta": {
-    "schema_version": "0.1.0",
+    "schema_version": "0.2.0",
     "updated": "2026-08-07",
-    "note": "事件时间线：重大能力跃迁/物理产出/企业披露。tag 对应观测指标。"
+    "note": "事件时间线：重大能力跃迁/物理产出/企业披露。tag 对应观测指标。首批来自 cocoloop 社区实操事件。"
   },
   "events": [
     {
       "id": "EVT-2026-0001",
       "date": "2026-08-07",
+      "category": "physical_output",
+      "tag": ["physical_output"],
+      "title": "AI 客服落地实测：企业月成本 ¥8万→¥3.2万，团队 8→3 人",
+      "detail": "Dify + RAG 方案，AI 自动答复率 68%，人工工单 350→112/天。这是少见的带完整账本的企业级 AI 物理产出证据（cocoloop 1755）",
+      "source_url": "https://www.cocoloop.cn/t/topic/1755"
+    },
+    {
+      "id": "EVT-2026-0002",
+      "date": "2026-08-07",
+      "category": "capability_leap",
+      "tag": ["agent_capability"],
+      "title": "Vibe coding 流程成型：plan→coding→review，2 天顶 15-30 人天",
+      "detail": "社区实操者把 AI 编程从单次提问升级为体系化流水线，token 成本降低 5-8 倍，代表执行层从'工具'到'生产方式'的转折（cocoloop 6714）",
+      "source_url": "https://www.cocoloop.cn/t/topic/6714"
+    },
+    {
+      "id": "EVT-2026-0003",
+      "date": "2026-08-07",
       "category": "milestone",
       "tag": ["agent_capability"],
-      "title": "示例：某 agent 在基准任务上自主完成率突破阈值",
-      "detail": "关联的说明",
-      "source_url": "https://example.com"
+      "title": "零基础者 12 天用 AI 做出付费产品并跑通 6.4% 转化",
+      "detail": "AI 写了约 80% 代码（Next.js + Supabase + Claude API），首月净利 ¥1520。标志'个人软件生产'门槛消失（cocoloop 1744）",
+      "source_url": "https://www.cocoloop.cn/t/topic/1744"
+    },
+    {
+      "id": "EVT-2026-0004",
+      "date": "2026-08-07",
+      "category": "market_wave",
+      "tag": ["unit_cost"],
+      "title": "AI 代装代卸进入窗口期末期：单价下探至 99-299/单",
+      "detail": "一键部署方案普及前最后的套利窗口。989 自评'UX 做不好中间商就有饭吃'——生产方式重塑在抹平摩擦层（cocoloop 449/989/1012）",
+      "source_url": "https://www.cocoloop.cn/t/topic/449"
+    },
+    {
+      "id": "EVT-2026-0005",
+      "date": "2026-08-07",
+      "category": "milestone",
+      "tag": ["unit_cost"],
+      "title": "垂直行业 AI 交付验证订阅制：$500/月维护费跑通",
+      "detail": "屋顶报价 + AI 拿下 $50,000 合同并转订阅。'卖结果不卖省时'确立为新操作位定价逻辑（cocoloop 2350）",
+      "source_url": "https://www.cocoloop.cn/t/topic/2350"
     }
   ]
 }

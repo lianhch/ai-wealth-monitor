@@ -58,6 +58,15 @@
   .b-transfer { color: var(--red); border-color: var(--red); }
   .signal .t { font-size: 14px; margin: 6px 0 2px; }
   .signal .src { color: var(--muted); font-size: 11px; }
+  .trends-meta { color: var(--muted); font-size: 11px; margin-bottom: 10px; }
+  .trend { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--border); align-items: baseline; }
+  .trend:last-child { border-bottom: none; }
+  .trend .stars { min-width: 56px; text-align: right; color: var(--green); font-weight: 600; font-size: 13px; }
+  .trend .stars small { color: var(--muted); font-weight: 400; font-size: 10px; }
+  .trend .rname { flex: 1; font-size: 13px; }
+  .trend .rname a { color: var(--blue); text-decoration: none; }
+  .trend .rdesc { color: var(--muted); font-size: 11px; margin-top: 2px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .trend .rage { color: var(--muted); font-size: 11px; white-space: nowrap; }
   .watch { display: flex; align-items: center; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border); font-size: 14px; }
   .watch:last-child { border-bottom: none; }
   .watch .name { flex: 1; }
@@ -81,7 +90,7 @@
 <div class="wrap">
   <header>
     <h1>AI 财富创造观察站</h1>
-    <p>唯一标准：AI 是否创造了更多新增（物理）财富？ · 数据源状态见各板块</p>
+    <p>唯一标准：AI 是否创造了更多新增（物理）财富？ · 信号人+AI 提炼，宏观数据自动采集 · 数据源状态见各板块</p>
   </header>
 
   <div class="banner">
@@ -92,6 +101,11 @@
       <div class="filter t-release"><div class="tag">释放 release</div><div class="desc">提效：同样投入更多产出。前提：资源流向新产出。</div></div>
       <div class="filter t-new"><div class="tag">新增 new · 进主榜</div><div class="desc">终局：原本做不出的东西。最终验证 = 物理产出增量。</div></div>
     </div>
+  </div>
+
+  <div class="panel" id="trends-panel">
+    <h2>GitHub AI 趋势 <span class="n">自动采集 · 近 14 天新建仓库 star 排行</span></h2>
+    <div id="trends"></div>
   </div>
 
   <div class="grid">
@@ -131,7 +145,8 @@ const FILES = {
   signals:   { path: 'data/signals.json',   el: 'signals' },
   watchlist: { path: 'data/watchlist.json', el: 'watchlist' },
   waves:     { path: 'data/waves.json',     el: 'waves' },
-  timeline:  { path: 'data/timeline.json',  el: 'timeline' }
+  timeline:  { path: 'data/timeline.json',  el: 'timeline' },
+  trends:    { path: 'data/auto/github_trends.json', el: 'trends' }
 };
 const LAYER_ZH = { cognition: '认知层', physical: '物理引擎', producer: '生产企业', tool: '执行层' };
 const TYPE_ZH = { new: '新增', release: '释放', transfer: '转移' };
@@ -187,14 +202,28 @@ function renderTimeline(d) {
     </div>`).join('');
 }
 
+function renderTrends(d) {
+  const items = (d && d.items) || [];
+  if (!items.length) { el('trends').innerHTML = '<div class="empty">暂无趋势数据（采集器未运行）</div>'; return; }
+  const meta = `<div class="trends-meta">来源：${d.source} · 窗口 ${d.window_days} 天 · 抓取于 ${(d.fetched_at || '').replace('T', ' ').replace('Z', ' UTC')}</div>`;
+  el('trends').innerHTML = meta + items.slice(0, 15).map(r => `
+    <div class="trend">
+      <span class="stars">${r.stars.toLocaleString()}<small> ★</small></span>
+      <span class="rname"><a href="${r.url}" target="_blank" rel="noopener">${r.full_name}</a>
+        <div class="rdesc">${r.description || ''}</div></span>
+      <span class="rage">${r.age_days}d</span>
+    </div>`).join('');
+}
+
 function fetchAll() {
   Promise.all(Object.values(FILES).map(f =>
     fetch(f.path).then(r => r.ok ? r.json() : null).catch(() => null)
-  )).then(([signals, watchlist, waves, timeline]) => {
+  )).then(([signals, watchlist, waves, timeline, trends]) => {
     if (signals) renderSignals(signals); else el('signals').innerHTML = '<div class="empty">数据加载失败</div>';
     if (watchlist) renderWatchlist(watchlist); else el('watchlist').innerHTML = '<div class="empty">数据加载失败</div>';
     if (waves) renderWaves(waves); else { el('waves-left').innerHTML = '<div class="empty">数据加载失败</div>'; el('waves-right').innerHTML = '<div class="empty">数据加载失败</div>'; }
     if (timeline) renderTimeline(timeline); else el('timeline').innerHTML = '<div class="empty">数据加载失败</div>';
+    renderTrends(trends);
   });
 }
 

@@ -1,0 +1,228 @@
+{
+  "source": "GitHub Search API (public, no token)",
+  "window_days": 14,
+  "fetched_at": "2026-08-07T01:25:19Z",
+  "status": "LIVE",
+  "items": [
+    {
+      "full_name": "FareedKhan-dev/kimi-k3-in-c",
+      "url": "https://github.com/FareedKhan-dev/kimi-k3-in-c",
+      "stars": 2833,
+      "forks": 472,
+      "open_issues": 2,
+      "created_at": "2026-08-01T09:29:38Z",
+      "pushed_at": "2026-08-06T14:48:00Z",
+      "description": "A 2.78-trillion-parameter Kimi K3 running inference on a single CPU in 8.24 GB of RAM. Portable C99: no BLAS, no framework, no GPU.",
+      "age_days": 5.7
+    },
+    {
+      "full_name": "genspark-ai/genoffice",
+      "url": "https://github.com/genspark-ai/genoffice",
+      "stars": 2049,
+      "forks": 340,
+      "open_issues": 18,
+      "created_at": "2026-07-31T09:40:58Z",
+      "pushed_at": "2026-08-06T12:25:37Z",
+      "description": "An AI-native office suite for macOS and Windows: word processor, spreadsheet, presentations, and PDF.",
+      "age_days": 6.7
+    },
+    {
+      "full_name": "QwenAudio/qwen-audio-agent",
+      "url": "https://github.com/QwenAudio/qwen-audio-agent",
+      "stars": 1960,
+      "forks": 141,
+      "open_issues": 13,
+      "created_at": "2026-07-27T05:04:26Z",
+      "pushed_at": "2026-08-06T19:42:45Z",
+      "description": "A realtime voice runtime that keeps Agents talking, working, and present.  Real-time Voice Runtime for AI Agents",
+      "age_days": 10.8
+    },
+    {
+      "full_name": "miuuyy/codex-chatgpt-web",
+      "url": "https://github.com/miuuyy/codex-chatgpt-web",
+      "stars": 598,
+      "forks": 64,
+      "open_issues": 12,
+      "created_at": "2026-07-26T13:04:44Z",
+      "pushed_at": "2026-08-05T23:42:17Z",
+      "description": "Use ChatGPT Web (including Pro) as a native model in the Codex app — with context, tools, streaming and images beyond Codex usage limits.",
+      "age_days": 11.5
+    },
+    {
+      "full_name": "0xwilliamortiz/openclaude-improved",
+      "url": "https://github.com/0xwilliamortiz/openclaude-improved",
+      "stars": 569,
+      "forks": 82,
+      "open_issues": 3,
+      "created_at": "2026-07-26T21:58:28Z",
+      "pushed_at": "2026-07-26T22:22:56Z",
+      "description": "runs anywhere. uses anything",
+      "age_days": 11.1
+    },
+    {
+      "full_name": "0xwilliamortiz/ratchet",
+      "url": "https://github.com/0xwilliamortiz/ratchet",
+      "stars": 436,
+      "forks": 85,
+      "open_issues": 1,
+      "created_at": "2026-07-31T17:54:30Z",
+      "pushed_at": "2026-08-04T17:47:07Z",
+      "description": "Your agent reads the rules. This checks whether it followed them.",
+      "age_days": 6.3
+    },
+    {
+      "full_name": "vercel-labs/marketing-team-eve-template",
+      "url": "https://github.com/vercel-labs/marketing-team-eve-template",
+      "stars": 430,
+      "forks": 18,
+      "open_issues": 0,
+      "created_at": "2026-07-26T06:27:51Z",
+      "pushed_at": "2026-08-05T04:42:25Z",
+      "description": "Team of marketing agents built on eve.",
+      "age_days": 11.8
+    },
+    {
+      "full_name": "deerwork-ai/deer-workflow",
+      "url": "https://github.com/deerwork-ai/deer-workflow",
+      "stars": 396,
+      "forks": 35,
+      "open_issues": 2,
+      "created_at": "2026-07-26T04:20:50Z",
+      "pushed_at": "2026-07-27T15:34:26Z",
+      "description": "An open-source graph engineering runtime that keeps orchestration in TypeScript and delegates semantic work to replaceable Agent runtimes.",
+      "age_days": 11.9
+    },
+    {
+      "full_name": "aigclink/geolook",
+      "url": "https://github.com/aigclink/geolook",
+      "stars": 387,
+      "forks": 92,
+      "open_issues": 3,
+      "created_at": "2026-07-29T07:51:43Z",
+      "pushed_at": "2026-07-31T05:10:47Z",
+      "description": "Open-source end-to-end GEO implementation: status analysis, diagnosis, strategy, tickets, execution, verification",
+      "age_days": 8.7
+    },
+    {
+      "full_name": "AMAP-ML/LongHorizon-Harness",
+      "url": "https://github.com/AMAP-ML/LongHorizon-Harness",
+      "stars": 339,
+      "forks": 39,
+      "open_issues": 4,
+      "created_at": "2026-08-04T04:30:58Z",
+      "pushed_at": "2026-08-06T16:31:14Z",
+      "description": "The long-horizon computer-use harness. Run AI agents across desktop apps and the CLI for extended periods while preserving task state and making reliable progre",
+      "age_days": 2.9
+    },
+    {
+      "full_name": "patchy631/time-to-first-token",
+      "url": "https://github.com/patchy631/time-to-first-token",
+      "stars": 336,
+      "forks": 29,
+      "open_issues": 0,
+      "created_at": "2026-08-02T13:02:26Z",
+      "pushed_at": "2026-08-02T13:08:21Z",
+      "description": "A 10-week, 30-minutes-a-day roadmap for LLM inference serving and optimization. vLLM, SGLang, quantization, speculative decoding, benchmarking.",
+      "age_days": 4.5
+    },
+    {
+      "full_name": "Anionex/agent-vision-toolkit",
+      "url": "https://github.com/Anionex/agent-vision-toolkit",
+      "stars": 332,
+      "forks": 14,
+      "open_issues": 2,
+      "created_at": "2026-08-01T10:00:13Z",
+      "pushed_at": "2026-08-06T22:23:12Z",
+      "description": "为纯文本模型设计的视觉工具箱和技能——多图理解、图片问答、长图识别、前端 UI 还原、GUI 自动化，并可选无缝接入 Codex、Claude Code、Pi、Oh My Pi、OpenCode ｜ A vision toolkit and skill designed for text-only models — i",
+      "age_days": 5.6
+    },
+    {
+      "full_name": "starling-build/starling",
+      "url": "https://github.com/starling-build/starling",
+      "stars": 296,
+      "forks": 17,
+      "open_issues": 9,
+      "created_at": "2026-07-28T04:31:38Z",
+      "pushed_at": "2026-08-07T01:03:32Z",
+      "description": "Starling — a new Linux desktop environment: Swift shell, its own compositor, a Flutter-to-Swift framework port, and first-party apps",
+      "age_days": 9.9
+    },
+    {
+      "full_name": "wevm/frog",
+      "url": "https://github.com/wevm/frog",
+      "stars": 221,
+      "forks": 6,
+      "open_issues": 2,
+      "created_at": "2026-07-26T09:31:13Z",
+      "pushed_at": "2026-08-04T09:04:50Z",
+      "description": "Automated friction logging for agents.",
+      "age_days": 11.7
+    },
+    {
+      "full_name": "cristicretu/diri",
+      "url": "https://github.com/cristicretu/diri",
+      "stars": 215,
+      "forks": 12,
+      "open_issues": 4,
+      "created_at": "2026-08-04T10:08:23Z",
+      "pushed_at": "2026-08-06T20:16:08Z",
+      "description": "Native macOS orchestrator for coding agents — run Claude Code, Codex, Cursor, Gemini and shells in parallel across git worktrees and remote hosts",
+      "age_days": 2.6
+    },
+    {
+      "full_name": "alikon-art/DeterminFlow",
+      "url": "https://github.com/alikon-art/DeterminFlow",
+      "stars": 210,
+      "forks": 31,
+      "open_issues": 2,
+      "created_at": "2026-08-02T07:40:51Z",
+      "pushed_at": "2026-08-06T16:09:00Z",
+      "description": "A production-oriented AI workflow runtime for building, validating, recovering, and shipping complex AI workflows as dependable services. 面向生产的 AI 工作流运行时：快速开发、验",
+      "age_days": 4.7
+    },
+    {
+      "full_name": "hardrave/NIGHTRUN",
+      "url": "https://github.com/hardrave/NIGHTRUN",
+      "stars": 187,
+      "forks": 17,
+      "open_issues": 1,
+      "created_at": "2026-07-27T19:37:52Z",
+      "pushed_at": "2026-07-27T19:40:26Z",
+      "description": "Boot your PC straight into an LLM. Rust, UEFI-resident, no operating system underneath.",
+      "age_days": 10.2
+    },
+    {
+      "full_name": "arcships/aimux",
+      "url": "https://github.com/arcships/aimux",
+      "stars": 176,
+      "forks": 9,
+      "open_issues": 16,
+      "created_at": "2026-07-28T04:58:46Z",
+      "pushed_at": "2026-08-06T11:53:34Z",
+      "description": "Unified LLM access layer in Rust — one API for 325 AI providers. 统一 LLM 服务接入层：一套 API 接入 325 家 AI 服务商。",
+      "age_days": 9.9
+    },
+    {
+      "full_name": "HezaoHezao/poirot",
+      "url": "https://github.com/HezaoHezao/poirot",
+      "stars": 176,
+      "forks": 6,
+      "open_issues": 0,
+      "created_at": "2026-07-28T17:36:07Z",
+      "pushed_at": "2026-07-28T17:37:01Z",
+      "description": "Poirot is a deep research agent kernel built for those who care about how agents are architected. ",
+      "age_days": 9.3
+    },
+    {
+      "full_name": "Aaryanverma/graybox",
+      "url": "https://github.com/Aaryanverma/graybox",
+      "stars": 165,
+      "forks": 11,
+      "open_issues": 1,
+      "created_at": "2026-07-26T10:39:53Z",
+      "pushed_at": "2026-08-06T08:12:45Z",
+      "description": "A local-first, long-term memory for anything you'd otherwise forget.",
+      "age_days": 11.6
+    }
+  ]
+}

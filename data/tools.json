@@ -61,7 +61,7 @@
     },
     {
       "id": "TOOL-2026-0004",
-      "name": "（示例·苗头）AI 视觉分拣机器人采购公告",
+      "name": "AI 驱动的无序分拣机器人（浙江科技大学采购，预算 56 万元）",
       "category": "机器人",
       "price_tier": "enterprise",
       "metrics": {
@@ -70,9 +70,9 @@
         "output_before": null,
         "output_after": null
       },
-      "ai_evidence": "采购公告中出现 AI 视觉分拣、无人值守产线参数",
+      "ai_evidence": "AI 驱动的无序分拣机器人，政府公开招标（采购公告含 AI 驱动、无序分拣需求）",
       "channel": "procurement",
-      "source_url": "https://www.ccgp.gov.cn",
+      "source_url": "http://www.ccgp.gov.cn/cggg/dfgg/gkzb/202608/t20260801_27054217.htm",
       "status": "NEW",
       "discovered_at": "2026-08-07",
       "last_updated": "2026-08-07"

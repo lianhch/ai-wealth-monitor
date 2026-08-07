@@ -38,7 +38,8 @@
   .filter .desc { color: var(--muted); font-size: 12px; margin-top: 2px; }
   .t-transfer .tag { color: var(--red); }
   .t-release .tag { color: var(--amber); }
-  .t-new .tag { color: var(--green); }
+  .t-new_pending .tag { color: var(--blue); }
+  .t-new_verified .tag { color: var(--green); }
   .grid { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
   @media (max-width: 900px) { .grid { grid-template-columns: 1fr; } }
   .panel {
@@ -53,11 +54,15 @@
   .signal { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; margin-bottom: 10px; }
   .signal .top { display: flex; align-items: center; gap: 8px; font-size: 13px; flex-wrap: wrap; }
   .badge { font-size: 11px; padding: 1px 8px; border-radius: 999px; border: 1px solid var(--border); }
-  .b-new { color: var(--green); border-color: var(--green); }
+  .b-new_verified { color: var(--green); border-color: var(--green); }
+  .b-new_pending { color: var(--blue); border-color: var(--blue); }
   .b-release { color: var(--amber); border-color: var(--amber); }
   .b-transfer { color: var(--red); border-color: var(--red); }
   .signal .t { font-size: 14px; margin: 6px 0 2px; }
   .signal .src { color: var(--muted); font-size: 11px; }
+  .physical { border: 1px dashed var(--border); border-radius: 6px; padding: 6px 8px; margin-top: 6px; font-size: 12px; color: var(--muted); }
+  .physical b { color: var(--text); }
+  .physical .p-scale { display: inline-block; font-size: 10px; padding: 0 6px; border-radius: 999px; border: 1px solid var(--border); margin-left: 4px; }
   .trends-meta { color: var(--muted); font-size: 11px; margin-bottom: 10px; }
   .trend { display: flex; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--border); align-items: baseline; }
   .trend:last-child { border-bottom: none; }
@@ -94,12 +99,13 @@
   </header>
 
   <div class="banner">
-    <div class="std">唯一标准 · 三问筛选器</div>
-    <div>每条信号先过三问：这是 <b style="color:var(--red)">转移</b>（零和，不进主榜）？<b style="color:var(--amber)">释放</b>（提效，标注前提）？还是 <b style="color:var(--green)">新增</b>（做出原本做不出的东西，进主榜）？</div>
+    <div class="std">唯一标准 · 四层判定</div>
+    <div>财富 = <b style="color:var(--green)">物理财富（实体产出）</b>。每条信号最后问一步：<b style="color:var(--red)">转移</b>（零和）？<b style="color:var(--amber)">释放</b>（提效，标注通向哪个实物）？<b style="color:var(--blue)">新增·待验证</b>（有样品/原型，实物未证实）？还是 <b style="color:var(--green)">新增·已证实</b>（实物产出被披露证实，进主榜）？</div>
     <div class="filters">
       <div class="filter t-transfer"><div class="tag">转移 transfer</div><div class="desc">零和：卖课/信息差/转手差价。不进主榜。</div></div>
-      <div class="filter t-release"><div class="tag">释放 release</div><div class="desc">提效：同样投入更多产出。前提：资源流向新产出。</div></div>
-      <div class="filter t-new"><div class="tag">新增 new · 进主榜</div><div class="desc">终局：原本做不出的东西。最终验证 = 物理产出增量。</div></div>
+      <div class="filter t-release"><div class="tag">释放 release</div><div class="desc">提效：同样投入更多产出。前提：资源流向实物产出。</div></div>
+      <div class="filter t-new_pending"><div class="tag">新增·待验证 new_pending</div><div class="desc">做出原本做不出的东西，实物产出未被证实（样品/原型/小批量）。</div></div>
+      <div class="filter t-new_verified"><div class="tag">新增·已证实 new_verified</div><div class="desc">实物产出被披露证实（成本↓/产能↑/实物出货）。唯一进主榜。</div></div>
     </div>
   </div>
 
@@ -111,8 +117,16 @@
   <div class="grid">
     <div>
       <div class="panel" id="signals-panel">
-        <h2>财富信号榜 <span class="n">新增物理财富实证</span></h2>
+        <h2>财富信号榜 <span class="n">新增·已证实（主榜）</span></h2>
         <div id="signals"></div>
+      </div>
+      <div class="panel" id="pending-panel">
+        <h2>新增·待验证 <span class="n">实物产出未被证实</span></h2>
+        <div id="pending"></div>
+      </div>
+      <div class="panel" id="tools-panel">
+        <h2>生产工具可及性阶梯 <span class="n">谁能生产实物</span></h2>
+        <div id="tools"></div>
       </div>
       <div class="panel" id="waves-panel">
         <h2>左右列重塑信号 <span class="n">左列消失 / 右列冒头</span></h2>
@@ -149,15 +163,32 @@ const FILES = {
   trends:    { path: 'data/auto/github_trends.json', el: 'trends' }
 };
 const LAYER_ZH = { cognition: '认知层', physical: '物理引擎', producer: '生产企业', tool: '执行层' };
-const TYPE_ZH = { new: '新增', release: '释放', transfer: '转移' };
+const TYPE_ZH = { new_verified: '新增·已证实', new_pending: '新增·待验证', release: '释放', transfer: '转移' };
+const SCALE_ZH = { individual: '个人/小团队', factory: '单厂/企业内部', scaled: '规模化' };
 const TAG_ZH = { agent_capability: 'agent能力', unit_cost: '单位成本', physical_output: '物理产出' };
+const TOOLS = [
+  { layer: '个人层', name: 'AI + 3D 打印', desc: 'Hi3D：AI 自动化 3D 打印最难步骤；桌面 3D 打印数百美元 vs 工业 CNC 数十万美元', status: 'LIVE' },
+  { layer: '二次开发层', name: '开源机器人二次开发', desc: 'Unitree SDK2（Go2/H1/B2/G1）+ ROS2，个人可改代码；暂无个人可售实物实证', status: 'STALE' },
+  { layer: '大企业层', name: '机器人 / 机床 / 自动化产线', desc: 'WEF 灯塔 224+ 家披露成本↓/产能↑；国家统计局工业机器人产量', status: 'LIVE' }
+];
 
 function el(id) { return document.getElementById(id); }
 
-function renderSignals(d) {
-  const list = (d.signals || []).filter(s => s.type !== 'transfer');
-  if (!list.length) { el('signals').innerHTML = '<div class="empty">暂无已发布信号（阶段 3 录入首批数据）</div>'; return; }
-  el('signals').innerHTML = list.map(s => `
+function renderTools() {
+  el('tools').innerHTML = TOOLS.map(t => `
+    <div class="watch">
+      <span class="status-dot s-${t.status}"></span>
+      <span class="name"><b>${t.layer}</b> · ${t.name}<div class="trends-meta" style="margin:2px 0 0">${t.desc}</div></span>
+    </div>`).join('');
+}
+
+function signalCard(s) {
+  const physical = s.physical ? `
+    <div class="physical"><b>物理产出</b>：${s.physical.product || '—'}
+      <span class="p-scale">${SCALE_ZH[s.physical.scale] || s.physical.scale || ''}</span>
+      <br>验证：${s.physical.verified ? '已证实' : '未证实'}${s.physical.evidence ? ' · ' + s.physical.evidence : ''}
+    </div>` : '';
+  return `
     <div class="signal">
       <div class="top">
         <span class="badge b-${s.type}">${TYPE_ZH[s.type]}</span>
@@ -166,8 +197,22 @@ function renderSignals(d) {
         <span class="status-dot s-${(s.evidence && s.evidence.verified_by === 'human') ? 'LIVE' : 'MANUAL'}"></span>
       </div>
       <div class="t">${s.title}</div>
+      ${physical}
       <div class="src">来源：${s.evidence ? s.evidence.source_name : '未知'}${s.evidence && s.evidence.source_url ? ' · ' + s.evidence.source_url : ''}</div>
-    </div>`).join('');
+    </div>`;
+}
+
+function renderSignals(d) {
+  const all = (d.signals || []);
+  const verified = all.filter(s => s.type === 'new_verified');
+  const pending = all.filter(s => s.type === 'new_pending');
+  const main = verified.length ? verified : all.filter(s => s.type !== 'transfer');
+  el('signals').innerHTML = main.length
+    ? main.map(signalCard).join('')
+    : '<div class="empty">暂无已证实信号（阶段 3 录入首批数据）</div>';
+  el('pending').innerHTML = pending.length
+    ? pending.map(signalCard).join('')
+    : '<div class="empty">暂无待验证信号</div>';
 }
 
 function renderWatchlist(d) {
@@ -216,6 +261,7 @@ function renderTrends(d) {
 }
 
 function fetchAll() {
+  renderTools();
   Promise.all(Object.values(FILES).map(f =>
     fetch(f.path).then(r => r.ok ? r.json() : null).catch(() => null)
   )).then(([signals, watchlist, waves, timeline, trends]) => {

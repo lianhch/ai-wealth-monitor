@@ -1,16 +1,22 @@
 {
   "_meta": {
-    "schema_version": "0.2.0",
+    "schema_version": "0.3.0",
     "updated": "2026-08-07",
-    "note": "财富信号：首批数据来自 cocoloop 100 篇帖子（2026-08 抓取）。type 三分类：transfer(转移)/release(释放)/new(新增)。只有 new 进主榜，transfer 进噪音样本反衬。"
+    "note": "财富信号：首批数据来自 cocoloop 100 篇帖子（2026-08 抓取）。type 四层判定：transfer(转移)/release(释放)/new_pending(新增·待验证)/new_verified(新增·已证实)。只有 new_verified 进主榜，new_pending 进待验证区；所有 new_* 必带 physical 字段（product/verified/evidence/scale），见 docs/superpowers/specs/物理财富验证制.md。"
   },
   "signals": [
     {
       "id": "SIG-2026-0001",
       "date": "2026-08-07",
-      "type": "new",
+      "type": "release",
       "chain_layer": "tool",
       "title": "零基础 12 天做出 AI 日记产品：487 注册 / 31 付费 / 6.4% 转化，首月净利 ¥1520（AI 写 80% 代码）",
+      "physical": {
+        "product": "无实体产品（纯软件 AI 日记 App）",
+        "verified": false,
+        "evidence": "纯数字产品，无实物产出链路；按唯一标准降为释放（释放/前置，非新增）",
+        "scale": "individual"
+      },
       "evidence": {
         "source_name": "cocoloop 帖子 1744（makerhu，实操者自报账本）",
         "source_url": "https://www.cocoloop.cn/t/topic/1744",
@@ -27,9 +33,15 @@
     {
       "id": "SIG-2026-0002",
       "date": "2026-08-07",
-      "type": "new",
+      "type": "release",
       "chain_layer": "producer",
       "title": "AI 客服系统落地：8 人客服团队降为 3 人，月成本 ¥8万→¥3.2万，AI 自动答复率 68%",
+      "physical": {
+        "product": "无直接实体产出（客服提效）",
+        "verified": false,
+        "evidence": "企业运营成本↓（释放），资源是否流向实物产出未证实；按唯一标准降为释放",
+        "scale": "factory"
+      },
       "evidence": {
         "source_name": "cocoloop 帖子 1755（chenhaoran_ops，企业实操）",
         "source_url": "https://www.cocoloop.cn/t/topic/1755",
@@ -46,9 +58,15 @@
     {
       "id": "SIG-2026-0003",
       "date": "2026-08-07",
-      "type": "new",
+      "type": "new_pending",
       "chain_layer": "producer",
       "title": "垂直行业 AI 原生交付：屋顶报价系统拿下 $50,000 合同 + $500/月维护订阅",
+      "physical": {
+        "product": "屋顶工程服务（服务落地导向实物工程，实物产出待证实）",
+        "verified": false,
+        "evidence": "AI 原生交付服务合同成交；指向实物工程（屋顶），但实物产出数据未披露",
+        "scale": "individual"
+      },
       "evidence": {
         "source_name": "cocoloop 帖子 2350（xiaobaiAI，实操者自报）",
         "source_url": "https://www.cocoloop.cn/t/topic/2350",
